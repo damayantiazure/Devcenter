@@ -4,12 +4,12 @@ param devcenterName string
 param environmentName string = 'sandbox'
 param projectTeamName string = 'developers'
 param catalogName string = 'dcc'
-param catalogRepoUri string = 'https://github.com/gordonby/deployment-environments.git'
+param catalogRepoUri string = 'https://dev.azure.com/damayantibhuyan/customerPOCs/_git/ade-demo'
 param adeProjectUser string = ''
 
 @secure()
 @description('A PAT token is required, even for public repos')
-param catalogRepoPat string
+param catalogRepoPat string = 'https://abndevcenterkeyvault.vault.azure.net/secrets/adopat'
 
 resource dc 'Microsoft.DevCenter/devcenters@2022-11-11-preview' existing = {
   name: devcenterName
